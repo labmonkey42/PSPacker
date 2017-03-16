@@ -18,4 +18,6 @@ Class IsoBuilder : Builder
 
     [string]$iso_checksum
 
+    [int]$disk_size
+
 }
