@@ -14,8 +14,8 @@ Class Builder
 
     [string]$boot_wait = "2m"
 
-    [string]$shutdown_command
+    [string]$output_directory
 
-    [int]$disk_size
+    [string]$shutdown_command
 
 }
