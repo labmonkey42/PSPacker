@@ -1,5 +1,6 @@
 using module .\Machine.psm1
 using module .\VagrantPostProcessor.psm1
+using namespace System.Collections
 
 Class Box : Machine
 {
@@ -16,7 +17,22 @@ Class Box : Machine
         $processor.compression_level = $CompressionLevel
         $processor.keep_input_artifact = $KeepInputArtifact
 
-        $this.post_processors.Add($processor)
+        $this.VagrantProcessor = $processor
+    }
+
+    [VagrantPostProcessor]$VagrantProcessor
+
+    [Array]GetEffectivePostProcessors()
+    {
+        $postProcessorList = [ArrayList]::new()
+
+        # Use base Machine class to serialize unspecialized PostProcessors
+        $postProcessorList.AddRange(([Machine]$this).GetEffectivePostProcessors())
+
+        # Add specialized Post Processor.
+        $postProcessorList.Add($this.VagrantProcessor.ToPacker())
+
+        return $postProcessorList.ToArray()
     }
     
 }

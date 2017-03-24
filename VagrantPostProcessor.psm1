@@ -4,18 +4,18 @@ Class VagrantPostProcessor : PostProcessor
 {
     
     [ValidateRange(0, 9)]
-    [int]$compression_level = 6
+    [int]$CompressionLevel = 6
     
-    [System.Collections.Generic.List[string]]$include
+    [System.Collections.Generic.List[string]]$Include
     
-    [bool]$keep_input_artifact = $false
+    [bool]$KeepInputArtifact = $false
     
-    [string]$output
+    [string]$Output
     
-    [string]$type = "vagrant"
+    [string]$Type = "vagrant"
     
-    [string]$vagrantfile_template = ".\Vagrantfile.template"
+    [string]$VagrantfileTemplate = ".\Vagrantfile.template"
 
-    [System.Collections.Generic.Dictionary[string, System.Collections.Generic.Dictionary[string, object]]]$override
+    [System.Collections.Generic.Dictionary[string, System.Collections.Generic.Dictionary[string, object]]]$Override
 
 }

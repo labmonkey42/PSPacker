@@ -10,6 +10,6 @@ Class Provisioner
         }
     }
 
-    [string]$name
+    [string]$Name
 
 }

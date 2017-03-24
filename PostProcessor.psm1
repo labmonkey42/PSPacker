@@ -10,6 +10,6 @@ Class PostProcessor
         }
     }
 
-    [string]$type
+    [string]$Type
 
 }

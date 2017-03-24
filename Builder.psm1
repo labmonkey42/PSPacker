@@ -10,12 +10,19 @@ Class Builder
         }
     }
 
-    [string]$type
+    [string]$Type
 
-    [string]$boot_wait = "2m"
+    [string]$BootWait = "2m"
 
-    [string]$output_directory
+    [string]$OutputDirectory
 
-    [string]$shutdown_command
+    [string]$ShutdownCommand
+
+    [Hashtable]ToPacker()
+    {
+        $packer = @{}
+        
+        return $packer
+    }
 
 }

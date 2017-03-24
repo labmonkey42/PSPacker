@@ -12,6 +12,6 @@ Class VMBuilder : Builder
         }
     }
 
-    [string]$source_path
+    [string]$SourcePath
 
 }

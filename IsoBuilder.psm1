@@ -12,12 +12,12 @@ Class IsoBuilder : Builder
         }
     }
 
-    [string]$iso_url
+    [string]$IsoUrl
 
-    [string]$iso_checksum_type
+    [string]$IsoChecksumType
 
-    [string]$iso_checksum
+    [string]$IsoChecksum
 
-    [int]$disk_size
+    [int]$DiskSize
 
 }

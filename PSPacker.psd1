@@ -9,10 +9,10 @@
 @{
 
 # Script module or binary module file associated with this manifest.
-# RootModule = ''
+RootModule = 'PSPacker.psm1'
 
 # Version number of this module.
-ModuleVersion = '1.0'
+ModuleVersion = '0.0.1'
 
 # Supported PSEditions
 # CompatiblePSEditions = @()
@@ -24,16 +24,16 @@ GUID = 'b618cf82-16ee-4320-a871-4650d35e0ce9'
 Author = 'Chris Lee'
 
 # Company or vendor of this module
-CompanyName = ''
+#CompanyName = ''
 
 # Copyright statement for this module
 Copyright = '(c) 2017 Chris Lee. All rights reserved.'
 
 # Description of the functionality provided by this module
-# Description = ''
+Description = 'Powershell tools to automate the creation of virtual machines with Hashicorp Packer'
 
 # Minimum version of the Windows PowerShell engine required by this module
-# PowerShellVersion = ''
+PowerShellVersion = '5.0'
 
 # Name of the Windows PowerShell host required by this module
 # PowerShellHostName = ''
@@ -69,24 +69,27 @@ Copyright = '(c) 2017 Chris Lee. All rights reserved.'
 NestedModules = @(
     'Builder.psm1',
     'IsoBuilder.psm1',
+    'VMBuilder.psm1',
     'PostProcessor.psm1',
-    'Provisioner.psm1',
     'VagrantPostProcessor.psm1',
+    'Provisioner.psm1',
     'Machine.psm1', 
     'Box.psm1'
 )
 
 # Functions to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no functions to export.
-FunctionsToExport = @()
+FunctionsToExport = @(
+)
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
-CmdletsToExport = @()
+CmdletsToExport = @(
+)
 
 # Variables to export from this module
 VariablesToExport = '*'
 
 # Aliases to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no aliases to export.
-AliasesToExport = @()
+AliasesToExport = @('??')
 
 # DSC resources to export from this module
 # DscResourcesToExport = @()
@@ -95,15 +98,15 @@ AliasesToExport = @()
 # ModuleList = @()
 
 # List of all files packaged with this module
-FileList = @(
-    'Builder.psm1',
-    'IsoBuilder.psm1',
-    'PostProcessor.psm1',
-    'Provisioner.psm1',
-    'VagrantPostProcessor.psm1',
-    'Machine.psm1', 
-    'Box.psm1'
-)
+#FileList = @(
+#    'Builder.psm1',
+#    'IsoBuilder.psm1',
+#    'PostProcessor.psm1',
+#    'Provisioner.psm1',
+#    'VagrantPostProcessor.psm1',
+#    'Machine.psm1', 
+#    'Box.psm1'
+#)
 
 # Private data to pass to the module specified in RootModule/ModuleToProcess. This may also contain a PSData hashtable with additional module metadata used by PowerShell.
 PrivateData = @{
@@ -111,13 +114,13 @@ PrivateData = @{
     PSData = @{
 
         # Tags applied to this module. These help with module discovery in online galleries.
-        # Tags = @()
+        Tags = @('packer', 'PSPacker')
 
         # A URL to the license for this module.
-        # LicenseUri = ''
+        LicenseUri = 'https://github.com/labmonkey42/PSPacker/blob/master/LICENSE'
 
         # A URL to the main website for this project.
-        # ProjectUri = ''
+        ProjectUri = 'https://github.com/labmonkey42/PSPacker'
 
         # A URL to an icon representing this module.
         # IconUri = ''
